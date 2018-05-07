@@ -28,7 +28,6 @@ struct APIPushInfo: Codable {
     }
 
     /// Grabs the default information for the user.
-    /// NOTE: You MUST call this on the main thread as it hits the app delegate.
     static var defaultInfo: APIPushInfo {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             fatalError("Could not access the app delegate!")

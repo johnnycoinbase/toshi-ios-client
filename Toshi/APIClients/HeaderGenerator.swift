@@ -51,7 +51,7 @@ struct HeaderGenerator {
         POST
     }
 
-    private enum HeaderField: String {
+    enum HeaderField: String {
         case
         address = "Toshi-ID-Address",
         contentLength = "Content-Length",
