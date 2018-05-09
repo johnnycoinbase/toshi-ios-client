@@ -27,23 +27,6 @@ enum HeaderGenerationError: Error {
 
 struct HeaderGenerator {
 
-    private static var testingCereal: Cereal?
-    static func defaultCereal() -> Cereal {
-        guard testingCereal == nil else {
-            return testingCereal!
-        }
-        return Cereal.shared
-    }
-
-    static func setTestingCereal(_ cereal: Cereal) {
-        testingCereal = cereal
-    }
-
-    static func clearTestingCereal() {
-        testingCereal = nil
-    
-    }
-
     enum HTTPMethod: String {
         case
         GET,
@@ -81,7 +64,7 @@ struct HeaderGenerator {
     static func createHeaders(timestamp: String,
                               path: String,
                               method: HTTPMethod = .POST,
-                              cereal: Cereal = defaultCereal(),
+                              cereal: Cereal = Cereal.shared,
                               payloadDictionary: [String: Any]) throws -> [String: String] {
         guard let data = try? JSONSerialization.data(withJSONObject: payloadDictionary, options: []) else {
             throw HeaderGenerationError.couldNotSerializePayloadDictionary
@@ -107,7 +90,7 @@ struct HeaderGenerator {
     static func createHeaders(timestamp: String,
                               path: String,
                               method: HTTPMethod = .POST,
-                              cereal: Cereal = defaultCereal(),
+                              cereal: Cereal = Cereal.shared,
                               payloadData: Data) throws -> [String: String] {
 
         guard let payloadString = String(data: payloadData, encoding: .utf8) else {
@@ -151,7 +134,7 @@ struct HeaderGenerator {
                                        timestamp: String,
                                        payload: Data,
                                        method: HTTPMethod = .POST,
-                                       cereal: Cereal = defaultCereal()) -> [String: String] {
+                                       cereal: Cereal = Cereal.shared) -> [String: String] {
         let hashedPayload = cereal.sha3WithID(data: payload)
         let signature = "0x\(cereal.signWithID(message: "\(method.rawValue)\n\(path)\n\(timestamp)\n\(hashedPayload)"))"
 
@@ -172,7 +155,7 @@ struct HeaderGenerator {
     ///   - timestamp: The timestamp to use when creating a header
     /// - Returns: A dictionary of string keys and string values which can be passed through as headers.
     static func createGetSignatureHeaders(path: String,
-                                          cereal: Cereal = defaultCereal(),
+                                          cereal: Cereal = Cereal.shared,
                                           timestamp: String) -> [String: String] {
         let signature = "0x\(cereal.signWithID(message: "\(HTTPMethod.GET.rawValue)\n\(path)\n\(timestamp)\n"))"
 

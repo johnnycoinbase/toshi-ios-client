@@ -35,7 +35,6 @@ class EthereumAPIClientTests: QuickSpec {
                 fail("Could not generate test cereal!")
                 return
             }
-            HeaderGenerator.setTestingCereal(testCereal)
 
             context("Happy path 😎") {
                 it("creates an unsigned transaction") {
