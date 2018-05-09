@@ -179,6 +179,113 @@ class HeaderGenerationTests: XCTestCase {
                 shouldMatch: false)
 
     }
+
+    func testGeneratingHeadersFromData() {
+        let path = "/v1/profile/photo"
+        let timestamp = "33333"
+
+        guard let testData = "{\"foo\":\"bar\"}".data(using: .utf8) else {
+            XCTFail("Could not encode data with UTF8")
+            return
+        }
+
+        let dataGeneratedHeaders: [String: String]
+        do {
+            dataGeneratedHeaders = try HeaderGenerator.createHeaders(timestamp: timestamp, path: path, cereal: testCereal, payloadData: testData)
+        } catch let error {
+            XCTFail("Error creating headers from data: \(error)")
+            return
+        }
+
+        let expectedHeaders = [
+            HeaderGenerator.HeaderField.timestamp.rawValue: timestamp,
+            HeaderGenerator.HeaderField.address.rawValue: "0xa391af6a522436f335b7c6486640153641847ea2",
+            HeaderGenerator.HeaderField.signature.rawValue: "0xdb5e81881f93ae208d10aa65c880f3d27f224d4d696cc842f1112ccea2ec1f412db6733e72831461ca47066e56f64e2c00ceaef50e4f2097dbcedfa99c40c80500"
+        ]
+
+        XCTAssertEqual(dataGeneratedHeaders, expectedHeaders)
+
+        // Changing just the path should create a different signature
+        let pathChangedHeaders: [String: String]
+        do {
+            pathChangedHeaders = try HeaderGenerator.createHeaders(timestamp: timestamp, path: (path + "/"), cereal: testCereal, payloadData: testData)
+        } catch let error {
+            XCTFail("Error creating path changed headers from dictionary: \(error)")
+            return
+        }
+
+        compare(valueFor: .timestamp,
+                inExpectedDictionary: expectedHeaders,
+                toValueIn: pathChangedHeaders)
+
+        compare(valueFor: .address,
+                inExpectedDictionary: expectedHeaders,
+                toValueIn: pathChangedHeaders)
+
+        compare(valueFor: .signature,
+                inExpectedDictionary: expectedHeaders,
+                toValueIn: pathChangedHeaders,
+                shouldMatch: false)
+
+        // Changing just the payload should create a different signature
+        let changedPayloadHeaders: [String: String]
+        do {
+            changedPayloadHeaders = try HeaderGenerator.createHeaders(timestamp: timestamp, path: path, cereal: testCereal, payloadDictionary: [ "foo": "baz" ])
+        } catch let error {
+            XCTFail("Error creating changed payload headers: \(error)")
+            return
+        }
+
+        compare(valueFor: .timestamp,
+                inExpectedDictionary: expectedHeaders,
+                toValueIn: changedPayloadHeaders)
+
+        compare(valueFor: .address,
+                inExpectedDictionary: expectedHeaders,
+                toValueIn: changedPayloadHeaders)
+
+        compare(valueFor: .signature,
+                inExpectedDictionary: expectedHeaders,
+                toValueIn: changedPayloadHeaders,
+                shouldMatch: false)
+
+        compare(valueFor: .signature,
+                inExpectedDictionary: pathChangedHeaders,
+                toValueIn: changedPayloadHeaders,
+                shouldMatch: false)
+
+        // Changing just the method should change the signature
+        let changedMethodHeaders: [String: String]
+        do {
+            changedMethodHeaders = try HeaderGenerator.createHeaders(timestamp: timestamp, path: path, method: .PUT, cereal: testCereal, payloadData: testData)
+        } catch let error {
+            XCTFail("Error creating headers from dictionary: \(error)")
+            return
+        }
+
+        compare(valueFor: .timestamp,
+                inExpectedDictionary: expectedHeaders,
+                toValueIn: changedMethodHeaders)
+
+        compare(valueFor: .address,
+                inExpectedDictionary: expectedHeaders,
+                toValueIn: changedMethodHeaders)
+
+        compare(valueFor: .signature,
+                inExpectedDictionary: expectedHeaders,
+                toValueIn: changedMethodHeaders,
+                shouldMatch: false)
+
+        compare(valueFor: .signature,
+                inExpectedDictionary: changedPayloadHeaders,
+                toValueIn: changedMethodHeaders,
+                shouldMatch: false)
+
+        compare(valueFor: .signature,
+                inExpectedDictionary: pathChangedHeaders,
+                toValueIn: changedMethodHeaders,
+                shouldMatch: false)
+    }
     }
 
 }
