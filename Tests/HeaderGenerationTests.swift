@@ -15,6 +15,7 @@
 
 @testable import Toshi
 import XCTest
+import Teapot
 
 class HeaderGenerationTests: XCTestCase {
 
@@ -286,6 +287,169 @@ class HeaderGenerationTests: XCTestCase {
                 toValueIn: changedMethodHeaders,
                 shouldMatch: false)
     }
+
+    func testGeneratingHeadersFromMultipartFormData() {
+        let image = ImageAsset.checkmark_big
+
+        let timestamp = "222035213"
+        let path = "/v2/user"
+        let boundary = "boundary1"
+        let fileName = "avatar.png"
+        let teapot = MockTeapot(bundle: Bundle(for: HeaderGenerationTests.self), mockFilename: "")
+        let testPayload = teapot.multipartData(from: image, boundary: boundary, filename: fileName)
+
+        let multipartHeaders = HeaderGenerator.createMultipartHeaders(boundary: boundary,
+                                                                      path: path,
+                                                                      timestamp: timestamp,
+                                                                      payload: testPayload,
+                                                                      cereal: testCereal)
+
+        let expectedHeaders = [
+            HeaderGenerator.HeaderField.timestamp.rawValue: timestamp,
+            HeaderGenerator.HeaderField.address.rawValue: "0xa391af6a522436f335b7c6486640153641847ea2",
+            HeaderGenerator.HeaderField.signature.rawValue: "0x9d1e2f99303937593419bc9bc6ed0c6f51890ed9b8dcc5b21c4e5740f4eeb74a3310945cb642c76eb55b8a8c36d145efb07b7d575caa1af5905e66dc62c6a13601",
+            HeaderGenerator.HeaderField.contentType.rawValue: "multipart/form-data; boundary=\(boundary)",
+            HeaderGenerator.HeaderField.contentLength.rawValue: "802"
+        ]
+
+        XCTAssertEqual(multipartHeaders, expectedHeaders)
+        
+        // Changing just the boundary should change the content type but not the signature or length
+        let changedBoundaryHeaders = HeaderGenerator.createMultipartHeaders(boundary: "boundary_longer",
+                                                                            path: path,
+                                                                            timestamp: timestamp,
+                                                                            payload: testPayload,
+                                                                            cereal: testCereal)
+
+        compare(valueFor: .timestamp,
+                inExpectedDictionary: multipartHeaders,
+                toValueIn: changedBoundaryHeaders)
+
+        compare(valueFor: .address,
+                inExpectedDictionary: multipartHeaders,
+                toValueIn: changedBoundaryHeaders)
+
+        compare(valueFor: .signature,
+                inExpectedDictionary: multipartHeaders,
+                toValueIn: changedBoundaryHeaders)
+
+        compare(valueFor: .contentType,
+                inExpectedDictionary: multipartHeaders,
+                toValueIn: changedBoundaryHeaders,
+                shouldMatch: false)
+
+        compare(valueFor: .contentLength,
+                inExpectedDictionary: multipartHeaders,
+                toValueIn: changedBoundaryHeaders)
+
+        // Changing just the path should create a different signature but leave content and length type alone
+        let changedPathHeaders = HeaderGenerator.createMultipartHeaders(boundary: boundary,
+                                                                        path: path + "/",
+                                                                        timestamp: timestamp,
+                                                                        payload: testPayload,
+                                                                        cereal: testCereal)
+        compare(valueFor: .timestamp,
+                inExpectedDictionary: multipartHeaders,
+                toValueIn: changedPathHeaders)
+
+        compare(valueFor: .address,
+                inExpectedDictionary: multipartHeaders,
+                toValueIn: changedPathHeaders)
+
+        compare(valueFor: .signature,
+                inExpectedDictionary: multipartHeaders,
+                toValueIn: changedPathHeaders,
+                shouldMatch: false)
+
+        compare(valueFor: .contentType,
+                inExpectedDictionary: multipartHeaders,
+                toValueIn: changedPathHeaders)
+
+        compare(valueFor: .contentLength,
+                inExpectedDictionary: multipartHeaders,
+                toValueIn: changedPathHeaders)
+
+        compare(valueFor: .signature,
+                inExpectedDictionary: changedBoundaryHeaders,
+                toValueIn: changedPathHeaders,
+                shouldMatch: false)
+
+        // Changing just the image should the signature and length but not the content type
+        let otherImage = ImageAsset.checkmark
+        let testPayloadWithOtherImage = teapot.multipartData(from: otherImage, boundary: boundary, filename: fileName)
+        XCTAssertNotEqual(testPayload, testPayloadWithOtherImage)
+
+        let changedImageHeaders = HeaderGenerator.createMultipartHeaders(boundary: boundary,
+                                                                         path: path,
+                                                                         timestamp: timestamp,
+                                                                         payload: testPayloadWithOtherImage,
+                                                                         cereal: testCereal)
+
+        compare(valueFor: .timestamp,
+                inExpectedDictionary: multipartHeaders,
+                toValueIn: changedImageHeaders)
+
+        compare(valueFor: .address,
+                inExpectedDictionary: multipartHeaders,
+                toValueIn: changedImageHeaders)
+
+        compare(valueFor: .signature,
+                inExpectedDictionary: multipartHeaders,
+                toValueIn: changedImageHeaders,
+                shouldMatch: false)
+
+        compare(valueFor: .contentType,
+                inExpectedDictionary: multipartHeaders,
+                toValueIn: changedImageHeaders)
+
+        compare(valueFor: .contentLength,
+                inExpectedDictionary: multipartHeaders,
+                toValueIn: changedImageHeaders,
+                shouldMatch: false)
+
+        compare(valueFor: .signature,
+                inExpectedDictionary: changedBoundaryHeaders,
+                toValueIn: changedImageHeaders,
+                shouldMatch: false)
+
+        // Changing just the method should change the signature
+        let changedMethodHeaders = HeaderGenerator.createMultipartHeaders(boundary: boundary,
+                                                                          path: path,
+                                                                          timestamp: timestamp,
+                                                                          payload: testPayload,
+                                                                          method: .PUT,
+                                                                          cereal: testCereal)
+
+        compare(valueFor: .timestamp,
+                inExpectedDictionary: expectedHeaders,
+                toValueIn: changedMethodHeaders)
+
+        compare(valueFor: .address,
+                inExpectedDictionary: expectedHeaders,
+                toValueIn: changedMethodHeaders)
+
+        compare(valueFor: .contentType,
+                inExpectedDictionary: expectedHeaders,
+                toValueIn: changedMethodHeaders)
+
+        compare(valueFor: .contentLength,
+                inExpectedDictionary: expectedHeaders,
+                toValueIn: changedMethodHeaders)
+
+        compare(valueFor: .signature,
+                inExpectedDictionary: expectedHeaders,
+                toValueIn: changedMethodHeaders,
+                shouldMatch: false)
+
+        compare(valueFor: .signature,
+                inExpectedDictionary: changedImageHeaders,
+                toValueIn: changedMethodHeaders,
+                shouldMatch: false)
+
+        compare(valueFor: .signature,
+                inExpectedDictionary: changedPathHeaders,
+                toValueIn: changedMethodHeaders,
+                shouldMatch: false)
     }
 
 }
