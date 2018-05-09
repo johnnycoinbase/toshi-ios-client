@@ -52,7 +52,7 @@ class HeaderGenerationTests: XCTestCase {
         let expectedHeaders = [
             HeaderGenerator.HeaderField.timestamp.rawValue: timestamp,
             HeaderGenerator.HeaderField.address.rawValue: "0xa391af6a522436f335b7c6486640153641847ea2",
-            HeaderGenerator.HeaderField.signature.rawValue: "0x9098476693a6e7b24a722296138c9032388beea043d8b7e8ca30f21fdd79ca2c19c47d9e6acf4dec7dfc5f09f7003470b26a23035c68ccd10ba1a3b7e924fb1a00"
+            HeaderGenerator.HeaderField.signature.rawValue: "0x56c855458b2ad3be7f3ffe3ee4fe6c1bef5a7b7641ac90c55d5e507369bfc45312236498df05f346fe334769e7a3903a514ae4c30751056eab1f54672937a81201"
         ]
 
         let generatedHeaders = HeaderGenerator.createGetSignatureHeaders(path: path, cereal: testCereal, timestamp: timestamp)
