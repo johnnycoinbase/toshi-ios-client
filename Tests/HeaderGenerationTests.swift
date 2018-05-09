@@ -25,6 +25,26 @@ class HeaderGenerationTests: XCTestCase {
         return cereal
     }
 
+    private func compare(valueFor field: HeaderGenerator.HeaderField,
+                         inExpectedDictionary expectedDictionary: [String: String],
+                         toValueIn receivedDictionary: [String: String],
+                         shouldMatch: Bool = true,
+                         file: StaticString = #file,
+                         line: UInt = #line) {
+        let expectedValue = expectedDictionary[field.rawValue]
+        let receivedValue = receivedDictionary[field.rawValue]
+
+        if shouldMatch {
+            XCTAssertEqual(expectedValue, receivedValue,
+                           file: file,
+                           line: line)
+        } else {
+            XCTAssertNotEqual(expectedValue, receivedValue,
+                              file: file,
+                              line: line)
+        }
+    }
+
     func testGeneratingGETHeaders() {
         let timestamp = "12345"
         let path = "/v1/get"
@@ -41,12 +61,18 @@ class HeaderGenerationTests: XCTestCase {
 
         // If you change the path, the signature should change, but the address and timestamp should be the same
         let otherHeaders = HeaderGenerator.createGetSignatureHeaders(path: "/something/else/", cereal: testCereal, timestamp: timestamp)
-        XCTAssertEqual(otherHeaders[HeaderGenerator.HeaderField.timestamp.rawValue],
-                       generatedHeaders[HeaderGenerator.HeaderField.timestamp.rawValue])
-        XCTAssertEqual(otherHeaders[HeaderGenerator.HeaderField.address.rawValue],
-                       generatedHeaders[HeaderGenerator.HeaderField.address.rawValue])
-        XCTAssertNotEqual(otherHeaders[HeaderGenerator.HeaderField.signature.rawValue],
-                          generatedHeaders[HeaderGenerator.HeaderField.signature.rawValue])
+        compare(valueFor: .timestamp,
+                inExpectedDictionary: expectedHeaders,
+                toValueIn: otherHeaders)
+
+        compare(valueFor: .address,
+                inExpectedDictionary: expectedHeaders,
+                toValueIn: otherHeaders)
+
+        compare(valueFor: .signature,
+                inExpectedDictionary: expectedHeaders,
+                toValueIn: otherHeaders,
+                shouldMatch: false)
     }
 
     func testGeneratingPOSTHeadersFromDictionary() {
@@ -80,12 +106,18 @@ class HeaderGenerationTests: XCTestCase {
             return
         }
 
-        XCTAssertEqual(pathChangedHeaders[HeaderGenerator.HeaderField.timestamp.rawValue],
-                       dictionaryGeneratedHeaders[HeaderGenerator.HeaderField.timestamp.rawValue])
-        XCTAssertEqual(pathChangedHeaders[HeaderGenerator.HeaderField.address.rawValue],
-                       dictionaryGeneratedHeaders[HeaderGenerator.HeaderField.address.rawValue])
-        XCTAssertNotEqual(pathChangedHeaders[HeaderGenerator.HeaderField.signature.rawValue],
-                          dictionaryGeneratedHeaders[HeaderGenerator.HeaderField.signature.rawValue])
+        compare(valueFor: .timestamp,
+                inExpectedDictionary: expectedHeaders,
+                toValueIn: pathChangedHeaders)
+
+        compare(valueFor: .address,
+                inExpectedDictionary: expectedHeaders,
+                toValueIn: pathChangedHeaders)
+
+        compare(valueFor: .signature,
+                inExpectedDictionary: expectedHeaders,
+                toValueIn: pathChangedHeaders,
+                shouldMatch: false)
 
         // Changing just the payload should create a different signature
         let changedPayloadHeaders: [String: String]
@@ -96,14 +128,23 @@ class HeaderGenerationTests: XCTestCase {
             return
         }
 
-        XCTAssertEqual(changedPayloadHeaders[HeaderGenerator.HeaderField.timestamp.rawValue],
-                       dictionaryGeneratedHeaders[HeaderGenerator.HeaderField.timestamp.rawValue])
-        XCTAssertEqual(changedPayloadHeaders[HeaderGenerator.HeaderField.address.rawValue],
-                       dictionaryGeneratedHeaders[HeaderGenerator.HeaderField.address.rawValue])
-        XCTAssertNotEqual(changedPayloadHeaders[HeaderGenerator.HeaderField.signature.rawValue],
-                          dictionaryGeneratedHeaders[HeaderGenerator.HeaderField.signature.rawValue])
-        XCTAssertNotEqual(changedPayloadHeaders[HeaderGenerator.HeaderField.signature.rawValue],
-                          pathChangedHeaders[HeaderGenerator.HeaderField.signature.rawValue])
+        compare(valueFor: .timestamp,
+                inExpectedDictionary: expectedHeaders,
+                toValueIn: changedPayloadHeaders)
+
+        compare(valueFor: .address,
+                inExpectedDictionary: expectedHeaders,
+                toValueIn: changedPayloadHeaders)
+
+        compare(valueFor: .signature,
+                inExpectedDictionary: expectedHeaders,
+                toValueIn: changedPayloadHeaders,
+                shouldMatch: false)
+
+        compare(valueFor: .signature,
+                inExpectedDictionary: pathChangedHeaders,
+                toValueIn: changedPayloadHeaders,
+                shouldMatch: false)
 
     }
 
