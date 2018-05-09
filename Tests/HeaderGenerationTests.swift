@@ -75,7 +75,7 @@ class HeaderGenerationTests: XCTestCase {
                 shouldMatch: false)
     }
 
-    func testGeneratingPOSTHeadersFromDictionary() {
+    func testGeneratingHeadersFromDictionary() {
         let path = "/v1/profile"
         let timestamp = "44444444"
 
@@ -146,6 +146,39 @@ class HeaderGenerationTests: XCTestCase {
                 toValueIn: changedPayloadHeaders,
                 shouldMatch: false)
 
+        // Changing just the method should change the signature
+        let changedMethodHeaders: [String: String]
+        do {
+            changedMethodHeaders = try HeaderGenerator.createHeaders(timestamp: timestamp, path: path, method: .PUT, cereal: testCereal, payloadDictionary: testDictionary)
+        } catch let error {
+            XCTFail("Error creating headers from dictionary: \(error)")
+            return
+        }
+
+        compare(valueFor: .timestamp,
+                inExpectedDictionary: expectedHeaders,
+                toValueIn: changedMethodHeaders)
+
+        compare(valueFor: .address,
+                inExpectedDictionary: expectedHeaders,
+                toValueIn: changedMethodHeaders)
+
+        compare(valueFor: .signature,
+                inExpectedDictionary: expectedHeaders,
+                toValueIn: changedMethodHeaders,
+                shouldMatch: false)
+
+        compare(valueFor: .signature,
+                inExpectedDictionary: changedPayloadHeaders,
+                toValueIn: changedMethodHeaders,
+                shouldMatch: false)
+
+        compare(valueFor: .signature,
+                inExpectedDictionary: pathChangedHeaders,
+                toValueIn: changedMethodHeaders,
+                shouldMatch: false)
+
+    }
     }
 
 }
