@@ -18,7 +18,7 @@ github "toshiapp/GrowingTextView" "9f2b44246bba060f7e3ca1e10c2d59dd6d3fbae5"
 github "UseSweet/SweetFoundation" ~> 1.2.0
 github "UseSweet/SweetSwift" "master"
 github "UseSweet/SweetUIKit" "master"
-github "aschuch/AwesomeCache"
+github "Boilertalk/BlockiesSwift"
 
 # Testing
 

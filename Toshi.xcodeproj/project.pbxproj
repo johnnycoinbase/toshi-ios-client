@@ -480,6 +480,10 @@
 		3399D6E3205FED0100CAFAE5 /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3399D6E2205FED0100CAFAE5 /* LocalizedStrings.swift */; };
 		3399D6E4205FED0100CAFAE5 /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3399D6E2205FED0100CAFAE5 /* LocalizedStrings.swift */; };
 		3399D6E5205FED0100CAFAE5 /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3399D6E2205FED0100CAFAE5 /* LocalizedStrings.swift */; };
+		339E999920A5E62F00FE69E2 /* BlockiesSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 339E999820A5E62F00FE69E2 /* BlockiesSwift.framework */; };
+		339E999A20A5E64E00FE69E2 /* BlockiesSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 339E999820A5E62F00FE69E2 /* BlockiesSwift.framework */; };
+		339E999B20A5E68200FE69E2 /* BlockiesSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 339E999820A5E62F00FE69E2 /* BlockiesSwift.framework */; };
+		339E999C20A5E6A600FE69E2 /* BlockiesSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 339E999820A5E62F00FE69E2 /* BlockiesSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		33C0342D1FFE6A1800A9C59C /* SplashScreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C0342C1FFE6A1800A9C59C /* SplashScreenUITests.swift */; };
 		33C034301FFE6A2F00A9C59C /* BasicRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C0342F1FFE6A2F00A9C59C /* BasicRobot.swift */; };
 		33C034321FFE6A3B00A9C59C /* SplashScreenRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C034311FFE6A3B00A9C59C /* SplashScreenRobot.swift */; };
@@ -563,7 +567,6 @@
 		9F3CFDE61E5F086200E8D632 /* EthereumConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3CFDE51E5F086200E8D632 /* EthereumConverter.swift */; };
 		9F3FF8001EB36122002D0293 /* TSOutgoingMessage+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3FF7FF1EB36122002D0293 /* TSOutgoingMessage+Addtions.m */; };
 		9F3FF8011EB36122002D0293 /* TSOutgoingMessage+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3FF7FF1EB36122002D0293 /* TSOutgoingMessage+Addtions.m */; };
-		9F3FF8121EB36A7F002D0293 /* AwesomeCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3FF8021EB36A7F002D0293 /* AwesomeCache.framework */; };
 		9F3FF8141EB36A7F002D0293 /* CameraScanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3FF8031EB36A7F002D0293 /* CameraScanner.framework */; };
 		9F3FF8161EB36A7F002D0293 /* EtherealCereal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3FF8041EB36A7F002D0293 /* EtherealCereal.framework */; };
 		9F3FF8181EB36A7F002D0293 /* Formulaic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3FF8051EB36A7F002D0293 /* Formulaic.framework */; };
@@ -576,7 +579,6 @@
 		9F3FF82A1EB36A7F002D0293 /* SweetUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3FF80E1EB36A7F002D0293 /* SweetUIKit.framework */; };
 		9F3FF82C1EB36A7F002D0293 /* Teapot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3FF80F1EB36A7F002D0293 /* Teapot.framework */; };
 		9F3FF82E1EB36A7F002D0293 /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3FF8101EB36A7F002D0293 /* WebRTC.framework */; };
-		9F3FF8321EB36A8E002D0293 /* AwesomeCache.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3FF8021EB36A7F002D0293 /* AwesomeCache.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9F3FF8331EB36A8E002D0293 /* CameraScanner.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3FF8031EB36A7F002D0293 /* CameraScanner.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9F3FF8341EB36A8E002D0293 /* EtherealCereal.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3FF8041EB36A7F002D0293 /* EtherealCereal.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9F3FF8351EB36A8E002D0293 /* Formulaic.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3FF8051EB36A7F002D0293 /* Formulaic.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -688,7 +690,6 @@
 		9FF957911EEEB7BA00DDCBD8 /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3FF8101EB36A7F002D0293 /* WebRTC.framework */; };
 		9FF957921EEEB7BA00DDCBD8 /* KeychainSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3FF8091EB36A7F002D0293 /* KeychainSwift.framework */; };
 		9FF957931EEEB7BA00DDCBD8 /* SweetFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3FF80C1EB36A7F002D0293 /* SweetFoundation.framework */; };
-		9FF957941EEEB7BA00DDCBD8 /* AwesomeCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3FF8021EB36A7F002D0293 /* AwesomeCache.framework */; };
 		9FF957951EEEB7BA00DDCBD8 /* HPGrowingTextView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3FF8071EB36A7F002D0293 /* HPGrowingTextView.framework */; };
 		9FF957961EEEB7BA00DDCBD8 /* TinyConstraints.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9202E371ED82AAD0036E9B7 /* TinyConstraints.framework */; };
 		9FF957981EEEB7BA00DDCBD8 /* SweetUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3FF80E1EB36A7F002D0293 /* SweetUIKit.framework */; };
@@ -868,7 +869,6 @@
 		A9603F511F4DABDC00BF57B1 /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3FF8101EB36A7F002D0293 /* WebRTC.framework */; };
 		A9603F521F4DABDC00BF57B1 /* KeychainSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3FF8091EB36A7F002D0293 /* KeychainSwift.framework */; };
 		A9603F531F4DABDC00BF57B1 /* SweetFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3FF80C1EB36A7F002D0293 /* SweetFoundation.framework */; };
-		A9603F541F4DABDC00BF57B1 /* AwesomeCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3FF8021EB36A7F002D0293 /* AwesomeCache.framework */; };
 		A9603F551F4DABDC00BF57B1 /* HPGrowingTextView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3FF8071EB36A7F002D0293 /* HPGrowingTextView.framework */; };
 		A9603F561F4DABDC00BF57B1 /* TinyConstraints.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9202E371ED82AAD0036E9B7 /* TinyConstraints.framework */; };
 		A9603F591F4DABDC00BF57B1 /* Teapot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3FF80F1EB36A7F002D0293 /* Teapot.framework */; };
@@ -1198,8 +1198,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				339E999C20A5E6A600FE69E2 /* BlockiesSwift.framework in Embed Frameworks */,
 				9FA12BE91E65A151003705F6 /* RevealServer.framework in Embed Frameworks */,
-				9F3FF8321EB36A8E002D0293 /* AwesomeCache.framework in Embed Frameworks */,
 				9F3FF8331EB36A8E002D0293 /* CameraScanner.framework in Embed Frameworks */,
 				9F3FF8341EB36A8E002D0293 /* EtherealCereal.framework in Embed Frameworks */,
 				9F3FF8351EB36A8E002D0293 /* Formulaic.framework in Embed Frameworks */,
@@ -1428,6 +1428,7 @@
 		3399D6A9205FD11800CAFAE5 /* LocalizedStrings.swift.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = LocalizedStrings.swift.stencil; sourceTree = "<group>"; };
 		3399D6AF205FE4C900CAFAE5 /* StencilScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StencilScript.swift; sourceTree = "<group>"; };
 		3399D6E2205FED0100CAFAE5 /* LocalizedStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
+		339E999820A5E62F00FE69E2 /* BlockiesSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BlockiesSwift.framework; path = Carthage/Build/iOS/BlockiesSwift.framework; sourceTree = "<group>"; };
 		33C034221FFE69E700A9C59C /* Tests_UI.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests_UI.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C034261FFE69E700A9C59C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33C0342C1FFE6A1800A9C59C /* SplashScreenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenUITests.swift; sourceTree = "<group>"; };
@@ -1736,6 +1737,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				339E999920A5E62F00FE69E2 /* BlockiesSwift.framework in Frameworks */,
 				9FF957781EEEB7BA00DDCBD8 /* libz.tbd in Frameworks */,
 				9FF957791EEEB7BA00DDCBD8 /* libc++.tbd in Frameworks */,
 				9FF9577A1EEEB7BA00DDCBD8 /* libstdc++.tbd in Frameworks */,
@@ -1754,7 +1756,6 @@
 				9FF957911EEEB7BA00DDCBD8 /* WebRTC.framework in Frameworks */,
 				9FF957921EEEB7BA00DDCBD8 /* KeychainSwift.framework in Frameworks */,
 				9FF957931EEEB7BA00DDCBD8 /* SweetFoundation.framework in Frameworks */,
-				9FF957941EEEB7BA00DDCBD8 /* AwesomeCache.framework in Frameworks */,
 				9FF957951EEEB7BA00DDCBD8 /* HPGrowingTextView.framework in Frameworks */,
 				9FF957961EEEB7BA00DDCBD8 /* TinyConstraints.framework in Frameworks */,
 				9FF957981EEEB7BA00DDCBD8 /* SweetUIKit.framework in Frameworks */,
@@ -1780,6 +1781,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				339E999B20A5E68200FE69E2 /* BlockiesSwift.framework in Frameworks */,
 				2BAB90CB1EC120B0005D98C6 /* libz.tbd in Frameworks */,
 				2BAB90CA1EC120A8005D98C6 /* libc++.tbd in Frameworks */,
 				2BAB90C81EC12098005D98C6 /* libstdc++.tbd in Frameworks */,
@@ -1799,7 +1801,6 @@
 				9F3FF82E1EB36A7F002D0293 /* WebRTC.framework in Frameworks */,
 				9F3FF8201EB36A7F002D0293 /* KeychainSwift.framework in Frameworks */,
 				9F3FF8261EB36A7F002D0293 /* SweetFoundation.framework in Frameworks */,
-				9F3FF8121EB36A7F002D0293 /* AwesomeCache.framework in Frameworks */,
 				9F3FF81C1EB36A7F002D0293 /* HPGrowingTextView.framework in Frameworks */,
 				A9202E3E1ED82AFC0036E9B7 /* TinyConstraints.framework in Frameworks */,
 				9F3FF82A1EB36A7F002D0293 /* SweetUIKit.framework in Frameworks */,
@@ -1816,6 +1817,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				339E999A20A5E64E00FE69E2 /* BlockiesSwift.framework in Frameworks */,
 				A9603F391F4DABDC00BF57B1 /* libz.tbd in Frameworks */,
 				A9603F3A1F4DABDC00BF57B1 /* libc++.tbd in Frameworks */,
 				A9603F3B1F4DABDC00BF57B1 /* libstdc++.tbd in Frameworks */,
@@ -1834,7 +1836,6 @@
 				A9603F511F4DABDC00BF57B1 /* WebRTC.framework in Frameworks */,
 				A9603F521F4DABDC00BF57B1 /* KeychainSwift.framework in Frameworks */,
 				A9603F531F4DABDC00BF57B1 /* SweetFoundation.framework in Frameworks */,
-				A9603F541F4DABDC00BF57B1 /* AwesomeCache.framework in Frameworks */,
 				A9603F551F4DABDC00BF57B1 /* HPGrowingTextView.framework in Frameworks */,
 				A9603F561F4DABDC00BF57B1 /* TinyConstraints.framework in Frameworks */,
 				A9603F591F4DABDC00BF57B1 /* Teapot.framework in Frameworks */,
@@ -1923,6 +1924,7 @@
 		27842ECF00E36BC79A5918DA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				339E999820A5E62F00FE69E2 /* BlockiesSwift.framework */,
 				2B7ED00C204EB7E2009423DA /* Haneke.framework */,
 				339959AC1FCEE74F00D69A01 /* EarlGrey.framework */,
 				E67683581F44673E0014B2D4 /* Nimble.framework */,
@@ -3481,11 +3483,11 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SweetFoundation.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SweetSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SweetUIKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/AwesomeCache.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/WebRTC.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/TinyConstraints.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Reachability.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Haneke.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/BlockiesSwift.framework",
 			);
 			name = "Copy Carthage Frameworks";
 			outputPaths = (
@@ -3625,11 +3627,11 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SweetFoundation.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SweetSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SweetUIKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/AwesomeCache.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/WebRTC.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/TinyConstraints.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Reachability.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Haneke.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/BlockiesSwift.framework",
 			);
 			name = "Copy Carthage Frameworks";
 			outputPaths = (
