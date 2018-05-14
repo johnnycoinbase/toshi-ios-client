@@ -365,9 +365,9 @@
 		2BF634531F7D568C00235C67 /* UIImage+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF634511F7D568C00235C67 /* UIImage+Utils.m */; };
 		2BF634541F7D568C00235C67 /* UIImage+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF634511F7D568C00235C67 /* UIImage+Utils.m */; };
 		2BF6651E20A922E50025D14C /* WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF6651D20A922E50025D14C /* WalletTests.swift */; };
-		2BF6652020A94CEE0025D14C /* IdenticonGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF6651F20A94CEE0025D14C /* IdenticonGenerator.swift */; };
-		2BF6652120A94CEE0025D14C /* IdenticonGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF6651F20A94CEE0025D14C /* IdenticonGenerator.swift */; };
-		2BF6652220A94CEE0025D14C /* IdenticonGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF6651F20A94CEE0025D14C /* IdenticonGenerator.swift */; };
+		2BF6652020A94CEE0025D14C /* Identicon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF6651F20A94CEE0025D14C /* Identicon.swift */; };
+		2BF6652120A94CEE0025D14C /* Identicon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF6651F20A94CEE0025D14C /* Identicon.swift */; };
+		2BF6652220A94CEE0025D14C /* Identicon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF6651F20A94CEE0025D14C /* Identicon.swift */; };
 		3311F44F2037595C0069EF22 /* LoadingHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33207B4320370B7C0025A5A2 /* LoadingHUD.swift */; };
 		3311F4502037595D0069EF22 /* LoadingHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33207B4320370B7C0025A5A2 /* LoadingHUD.swift */; };
 		3312F68020077C0100881B97 /* DisappearingBackgroundNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3312F67F20077C0100881B97 /* DisappearingBackgroundNavBar.swift */; };
@@ -1405,7 +1405,7 @@
 		2BF634501F7D568C00235C67 /* UIImage+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Utils.h"; sourceTree = "<group>"; };
 		2BF634511F7D568C00235C67 /* UIImage+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utils.m"; sourceTree = "<group>"; };
 		2BF6651D20A922E50025D14C /* WalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTests.swift; sourceTree = "<group>"; };
-		2BF6651F20A94CEE0025D14C /* IdenticonGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdenticonGenerator.swift; sourceTree = "<group>"; };
+		2BF6651F20A94CEE0025D14C /* Identicon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identicon.swift; sourceTree = "<group>"; };
 		2EFDDC6594B3A1B7A8739A53 /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F1B2E5A8052289054B2DCDD /* libPods-CocoaPods-Development.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CocoaPods-Development.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30B89C992242CEAAB91C1B7C /* libPods-CocoaPods-Development.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CocoaPods-Development.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2212,7 +2212,7 @@
 			isa = PBXGroup;
 			children = (
 				2BE6FB0E1EFC0C1600B0B848 /* AvatarManager.swift */,
-				2BF6651F20A94CEE0025D14C /* IdenticonGenerator.swift */,
+				2BF6651F20A94CEE0025D14C /* Identicon.swift */,
 			);
 			path = Avatars;
 			sourceTree = "<group>";
@@ -4083,7 +4083,7 @@
 				2B4E25EC1FCCCD71004614D5 /* AvatarTitleSubtitleCell.swift in Sources */,
 				D197B11DD70DB5696FFC4FD2 /* UINotificationName+Additions.swift in Sources */,
 				3345A0B62035370B00C559BC /* SendConfirmationSection.swift in Sources */,
-				2BF6652220A94CEE0025D14C /* IdenticonGenerator.swift in Sources */,
+				2BF6652220A94CEE0025D14C /* Identicon.swift in Sources */,
 				D197B968EE5E2CE52CC92F1D /* YapDatabaseViewConnection+Additions.swift in Sources */,
 				2BA888ED1F600ED500B03D8E /* Currency.swift in Sources */,
 				3372DC291FE98C5F001234E3 /* DappViewController.swift in Sources */,
@@ -4402,7 +4402,7 @@
 				D197B61F77E710DF67E4FBD2 /* UINotificationName+Additions.swift in Sources */,
 				3345A0B42035370B00C559BC /* SendConfirmationSection.swift in Sources */,
 				D197B80A67FA2271BE1C9621 /* YapDatabaseViewConnection+Additions.swift in Sources */,
-				2BF6652020A94CEE0025D14C /* IdenticonGenerator.swift in Sources */,
+				2BF6652020A94CEE0025D14C /* Identicon.swift in Sources */,
 				3332E0BC1FE979C800CC1C8A /* DappViewController.swift in Sources */,
 				A91D72A51F877FFA0093420C /* ChatViewModel.swift in Sources */,
 				2B46017B202A2FB40098694D /* AvatarTitleDetailsCell.swift in Sources */,
@@ -4705,7 +4705,7 @@
 				2B4E25EB1FCCCD71004614D5 /* AvatarTitleSubtitleCell.swift in Sources */,
 				A9603F351F4DABDC00BF57B1 /* UINotificationName+Additions.swift in Sources */,
 				3345A0B52035370B00C559BC /* SendConfirmationSection.swift in Sources */,
-				2BF6652120A94CEE0025D14C /* IdenticonGenerator.swift in Sources */,
+				2BF6652120A94CEE0025D14C /* Identicon.swift in Sources */,
 				A9603F361F4DABDC00BF57B1 /* YapDatabaseViewConnection+Additions.swift in Sources */,
 				2BA888EC1F600ED500B03D8E /* Currency.swift in Sources */,
 				3372DC281FE98C5F001234E3 /* DappViewController.swift in Sources */,

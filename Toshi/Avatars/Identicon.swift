@@ -16,21 +16,21 @@
 import Foundation
 import BlockiesSwift
 
-struct IdenticonGenerator {
+struct Identicon {
 
-    private static let defaultSize: Int = 8
-    private static let defaultScale: Int = 8
+    private static let defaultBlocksSize: Int = 8
+    private static let defaultScale: Int = 6
 
     /// Generates identicon for given address.
     ///
     /// - Parameters:
     ///   - seed: The seed to be used.
     ///   - size: The number of blocks per side for this image. Defaults to 8.
-    ///   - scale: The number of pixels per block. Defaults to 4.
+    ///   - scale: The number of pixels per block. Defaults to 6.
     ///   - color: The foreground color. Defaults to nil, then random is used indside Blockies.
     ///   - bgColor: The background color. Defaults to nil, then random is used indside Blockies.
     ///   - spotColor: A color which forms mouths and eyes. Defaults to nil, then random is used indside Blockies.
-    static func identicon(for address: String, size: Int = defaultSize, scale: Int = defaultScale, color: UIColor? = nil, bgColor: UIColor? = nil, spotColor: UIColor? = nil) -> UIImage? {
+    static func generate(for address: String, size: Int = defaultBlocksSize, scale: Int = defaultScale, color: UIColor? = nil, bgColor: UIColor? = nil, spotColor: UIColor? = nil) -> UIImage? {
 
         let blockies = Blockies(seed: address,
                                 size: size,

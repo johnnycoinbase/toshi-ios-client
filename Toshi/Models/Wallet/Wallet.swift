@@ -101,7 +101,7 @@ struct Wallet {
 
             let operation = BlockOperation()
             operation.addExecutionBlock {
-                if let identicon = IdenticonGenerator.identicon(for: wallet.address) {
+                if let identicon = Identicon.generate(for: wallet.address) {
                     Wallet.identiconsCache.set(value: identicon, key: wallet.address)
                 }
             }
@@ -113,8 +113,8 @@ struct Wallet {
     }
 
     private static func walletKeychain(from mnemonic: BTCMnemonic, lastPath: UInt32) -> BTCKeychain {
-        // wallet path: 44H/60H/0H/0 and then 0 again. Metamask root path, first key.
-        // Metamask allows multiple addresses, by incrementing the last path. So second key would be: 44H/60H/0H/0/1 and so on.
+        // wallet path: 44H/60H/0H/0 and then last path.
+
         return mnemonic.keychain
             .derivedKeychain(at: 44, hardened: true)
             .derivedKeychain(at: 60, hardened: true)

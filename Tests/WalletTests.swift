@@ -39,8 +39,13 @@ class WalletTests: XCTestCase {
         }
         return cereal
     }()
+
+    override func setUp() {
+        Wallet.generate(mnemonic: testCereal.mnemonic)
+    }
     
     func testGeneratedWalletsAddresses() {
+
         for (index, wallet) in Wallet.items.enumerated() {
             let expectedWalletAddress = expectedWalletAddresses[index]
             XCTAssertEqual(expectedWalletAddress, wallet.address)
