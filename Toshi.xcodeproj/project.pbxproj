@@ -364,6 +364,7 @@
 		2BF634521F7D568C00235C67 /* UIImage+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF634511F7D568C00235C67 /* UIImage+Utils.m */; };
 		2BF634531F7D568C00235C67 /* UIImage+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF634511F7D568C00235C67 /* UIImage+Utils.m */; };
 		2BF634541F7D568C00235C67 /* UIImage+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF634511F7D568C00235C67 /* UIImage+Utils.m */; };
+		2BF6651E20A922E50025D14C /* WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF6651D20A922E50025D14C /* WalletTests.swift */; };
 		2BF6652020A94CEE0025D14C /* IdenticonGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF6651F20A94CEE0025D14C /* IdenticonGenerator.swift */; };
 		2BF6652120A94CEE0025D14C /* IdenticonGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF6651F20A94CEE0025D14C /* IdenticonGenerator.swift */; };
 		2BF6652220A94CEE0025D14C /* IdenticonGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF6651F20A94CEE0025D14C /* IdenticonGenerator.swift */; };
@@ -1403,6 +1404,7 @@
 		2BF6343C1F7C3D0B00235C67 /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = Carthage/Build/iOS/Reachability.framework; sourceTree = "<group>"; };
 		2BF634501F7D568C00235C67 /* UIImage+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Utils.h"; sourceTree = "<group>"; };
 		2BF634511F7D568C00235C67 /* UIImage+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utils.m"; sourceTree = "<group>"; };
+		2BF6651D20A922E50025D14C /* WalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTests.swift; sourceTree = "<group>"; };
 		2BF6651F20A94CEE0025D14C /* IdenticonGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdenticonGenerator.swift; sourceTree = "<group>"; };
 		2EFDDC6594B3A1B7A8739A53 /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F1B2E5A8052289054B2DCDD /* libPods-CocoaPods-Development.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CocoaPods-Development.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1925,6 +1927,7 @@
 				14147EA51E8119F0006BD47B /* Info.plist */,
 				33806076206274A200916E6A /* GeneratedCodeTests.swift */,
 				33E9A25A209CEBEE004621FF /* HeaderGenerationTests.swift */,
+				2BF6651D20A922E50025D14C /* WalletTests.swift */,
 				D197B0B8C43D9AEF28A5170A /* IDAPIClientQuickSpecs.swift */,
 				33816A6A2003CBF200FE81BD /* MessageParsingTests.swift */,
 				D197BD90B16E4CB6A71D4C6C /* NSDecimalNumber+AdditionsTests.swift */,
@@ -3837,6 +3840,7 @@
 				33316912202B89BC00A396A2 /* QRCodeGeneratorTests.swift in Sources */,
 				D197B50DCD78CB8264B920C3 /* NSDecimalNumber+AdditionsTests.swift in Sources */,
 				33806077206274A200916E6A /* GeneratedCodeTests.swift in Sources */,
+				2BF6651E20A922E50025D14C /* WalletTests.swift in Sources */,
 				D197B9197610B41F1C03A246 /* PaymentManagerTests.swift in Sources */,
 				D197BCD0784E03D9B662C7F8 /* CGFloat+Additions.swift in Sources */,
 				D197BCE9E48328BF70480029 /* DirectoryAPIClientTests.swift in Sources */,
