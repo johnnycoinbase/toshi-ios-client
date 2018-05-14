@@ -17,7 +17,6 @@ import Foundation
 import EtherealCereal
 import HDWallet
 import Haneke
-import BlockiesSwift
 
 struct Wallet {
 
@@ -102,9 +101,7 @@ struct Wallet {
 
             let operation = BlockOperation()
             operation.addExecutionBlock {
-
-                let blockies = Blockies(seed: wallet.address)
-                if let identicon = blockies.createImage() {
+                if let identicon = IdenticonGenerator.identicon(for: wallet.address) {
                     Wallet.identiconsCache.set(value: identicon, key: wallet.address)
                 }
             }
