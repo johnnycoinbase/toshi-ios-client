@@ -103,6 +103,8 @@ struct Wallet {
             operation.addExecutionBlock {
                 if let identicon = Identicon.generate(for: wallet.address) {
                     Wallet.identiconsCache.set(value: identicon, key: wallet.address)
+                } else {
+                    assertionFailure("Failed to generate identicon for wallet address: \(wallet.address)")
                 }
             }
 
