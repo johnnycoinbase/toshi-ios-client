@@ -15,10 +15,11 @@
 
 @testable import Toshi
 import XCTest
+import BlockiesSwift
 
-class WalletTests: XCTestCase {
+class IdenticonTests: XCTestCase {
 
-    private lazy var expectedWalletAddresses = {
+    private lazy var walletAddresses = {
 
         return ["0x9858effd232b4033e47d90003d41ec34ecaeda94",
                 "0x6fac4d18c912343bf86fa7049364dd4e424ab9c0",
@@ -32,24 +33,34 @@ class WalletTests: XCTestCase {
                 "0x4c1c56443abfe6dd33de31daaf0a6e929dbc4971"]
     }()
 
-    private lazy var testCereal: Cereal = {
-        guard let cereal = Cereal(words: ["abandon", "abandon", "abandon", "abandon", "abandon", "abandon", "abandon", "abandon", "abandon", "abandon", "abandon", "about"]) else {
-            XCTFail("failed to create cereal")
-            fatalError("failed to create cereal")
-        }
-        return cereal
-    }()
+    func testIdenticons() {
 
-    override func setUp() {
-        super.setUp()
-        Wallet.generate(mnemonic: testCereal.mnemonic)
-    }
-    
-    func testGeneratedWalletsAddresses() {
+        for seed in walletAddresses {
 
-        for (index, wallet) in Wallet.items.enumerated() {
-            let expectedWalletAddress = expectedWalletAddresses[index]
-            XCTAssertEqual(expectedWalletAddress, wallet.address)
+            // Passing size:8 and scale: 6 here to match default behaviour on Identicon
+            let blockies = Blockies(seed: seed, size: 8, scale: 6)
+
+            guard let expectedIdenticon = blockies.createImage() else {
+                XCTFail("Failed to generate expected identicon for address: \(seed)")
+                continue
+            }
+
+            guard let identionForGivenSeed = Identicon.generate(for: seed) else {
+                XCTFail("Failed to generate identicon for address: \(seed)")
+                continue
+            }
+
+            guard let expectedIdenticonData = UIImagePNGRepresentation(expectedIdenticon) else {
+                XCTFail("Failed to render expected idention into Data")
+                continue
+            }
+
+            guard let generatedIdenticonData = UIImagePNGRepresentation(identionForGivenSeed) else {
+                XCTFail("Failed to render generated identicon into Data")
+                continue
+            }
+
+            XCTAssertEqual(expectedIdenticonData, generatedIdenticonData)
         }
     }
 }

@@ -368,6 +368,7 @@
 		2BF6652020A94CEE0025D14C /* Identicon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF6651F20A94CEE0025D14C /* Identicon.swift */; };
 		2BF6652120A94CEE0025D14C /* Identicon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF6651F20A94CEE0025D14C /* Identicon.swift */; };
 		2BF6652220A94CEE0025D14C /* Identicon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF6651F20A94CEE0025D14C /* Identicon.swift */; };
+		2BF6652420AA99E30025D14C /* IdenticonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF6652320AA99E30025D14C /* IdenticonTests.swift */; };
 		3311F44F2037595C0069EF22 /* LoadingHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33207B4320370B7C0025A5A2 /* LoadingHUD.swift */; };
 		3311F4502037595D0069EF22 /* LoadingHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33207B4320370B7C0025A5A2 /* LoadingHUD.swift */; };
 		3312F68020077C0100881B97 /* DisappearingBackgroundNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3312F67F20077C0100881B97 /* DisappearingBackgroundNavBar.swift */; };
@@ -1406,6 +1407,7 @@
 		2BF634511F7D568C00235C67 /* UIImage+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utils.m"; sourceTree = "<group>"; };
 		2BF6651D20A922E50025D14C /* WalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTests.swift; sourceTree = "<group>"; };
 		2BF6651F20A94CEE0025D14C /* Identicon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identicon.swift; sourceTree = "<group>"; };
+		2BF6652320AA99E30025D14C /* IdenticonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdenticonTests.swift; sourceTree = "<group>"; };
 		2EFDDC6594B3A1B7A8739A53 /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F1B2E5A8052289054B2DCDD /* libPods-CocoaPods-Development.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CocoaPods-Development.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30B89C992242CEAAB91C1B7C /* libPods-CocoaPods-Development.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CocoaPods-Development.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1928,6 +1930,7 @@
 				33806076206274A200916E6A /* GeneratedCodeTests.swift */,
 				33E9A25A209CEBEE004621FF /* HeaderGenerationTests.swift */,
 				2BF6651D20A922E50025D14C /* WalletTests.swift */,
+				2BF6652320AA99E30025D14C /* IdenticonTests.swift */,
 				D197B0B8C43D9AEF28A5170A /* IDAPIClientQuickSpecs.swift */,
 				33816A6A2003CBF200FE81BD /* MessageParsingTests.swift */,
 				D197BD90B16E4CB6A71D4C6C /* NSDecimalNumber+AdditionsTests.swift */,
@@ -3813,6 +3816,7 @@
 				6A369A3A1FBF2AB50099C2FF /* RLPTests.swift in Sources */,
 				84C459021F41B7AA00D534B8 /* QRCodeIntentTests.swift in Sources */,
 				6AAB66321FC4508600C45149 /* CerealTests.swift in Sources */,
+				2BF6652420AA99E30025D14C /* IdenticonTests.swift in Sources */,
 				9FE5338A1F0B9CDA00B0C2B5 /* BaseConverter.swift in Sources */,
 				33E9A25B209CEBEE004621FF /* HeaderGenerationTests.swift in Sources */,
 				33CF51311FD181F700293FD1 /* DLog.swift in Sources */,
