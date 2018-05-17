@@ -19,6 +19,7 @@ github "UseSweet/SweetFoundation" ~> 1.2.0
 github "UseSweet/SweetSwift" "master"
 github "UseSweet/SweetUIKit" "master"
 github "Boilertalk/BlockiesSwift"
+github "amplitude/Amplitude-iOS"
 
 # Testing
 

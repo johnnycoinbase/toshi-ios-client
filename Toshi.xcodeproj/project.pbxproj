@@ -1013,6 +1013,10 @@
 		A9EE1F381F98CBCF00FB3889 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A93432C61F94E48500A52F11 /* SF-Pro-Display-Semibold.otf */; };
 		A9F61F7F1E72E22900D892E5 /* SettingsSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F61F7E1E72E22900D892E5 /* SettingsSectionHeader.swift */; };
 		A9F8D1C81E72B4AA003F5749 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F8D1C71E72B4AA003F5749 /* Checkbox.swift */; };
+		ABB0A50620AE47FD006D4FBC /* Amplitude.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB0A50520AE47FC006D4FBC /* Amplitude.framework */; };
+		ABB0A50820AE4814006D4FBC /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB0A50720AE4814006D4FBC /* Analytics.swift */; };
+		ABB0A50920AE4821006D4FBC /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB0A50720AE4814006D4FBC /* Analytics.swift */; };
+		ABB0A50A20AE4821006D4FBC /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB0A50720AE4814006D4FBC /* Analytics.swift */; };
 		C1128E2CDD482DB9BE1BF5A3 /* libPods-CocoaPods-Distribution.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E67E3F2BFB7B0171BF61B30 /* libPods-CocoaPods-Distribution.a */; };
 		C904ABD5324415F45702AB48 /* libPods-CocoaPods-Distribution.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2446336EA68730ACD1CE100D /* libPods-CocoaPods-Distribution.a */; };
 		D197B006BD046DC2E6B46351 /* String+nsRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B695935159A20363BBF9 /* String+nsRange.swift */; };
@@ -1628,6 +1632,8 @@
 		A9ED6CD51E85291600160637 /* KeyboardInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardInfo.swift; sourceTree = "<group>"; };
 		A9F61F7E1E72E22900D892E5 /* SettingsSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSectionHeader.swift; sourceTree = "<group>"; };
 		A9F8D1C71E72B4AA003F5749 /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
+		ABB0A50520AE47FC006D4FBC /* Amplitude.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Amplitude.framework; path = Carthage/Build/iOS/Amplitude.framework; sourceTree = "<group>"; };
+		ABB0A50720AE4814006D4FBC /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		B40A4C4CC6900CEF3306492F /* Pods-CocoaPods-Development.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaPods-Development.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaPods-Development/Pods-CocoaPods-Development.debug.xcconfig"; sourceTree = "<group>"; };
 		BC3FDDC961E4E0D0A1A20C34 /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CFAFE0DF986DC3B38AF50EE6 /* Pods-CocoaPods-Distribution.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaPods-Distribution.release.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaPods-Distribution/Pods-CocoaPods-Distribution.release.xcconfig"; sourceTree = "<group>"; };
@@ -1785,6 +1791,7 @@
 				2BAB90CB1EC120B0005D98C6 /* libz.tbd in Frameworks */,
 				2BAB90CA1EC120A8005D98C6 /* libc++.tbd in Frameworks */,
 				2BAB90C81EC12098005D98C6 /* libstdc++.tbd in Frameworks */,
+				ABB0A50620AE47FD006D4FBC /* Amplitude.framework in Frameworks */,
 				2BAB90C61EC12076005D98C6 /* AssetsLibrary.framework in Frameworks */,
 				2BAB90C41EC1206B005D98C6 /* MobileCoreServices.framework in Frameworks */,
 				2BAB90AF1EC11963005D98C6 /* Photos.framework in Frameworks */,
@@ -1924,6 +1931,7 @@
 		27842ECF00E36BC79A5918DA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ABB0A50520AE47FC006D4FBC /* Amplitude.framework */,
 				339E999820A5E62F00FE69E2 /* BlockiesSwift.framework */,
 				2B7ED00C204EB7E2009423DA /* Haneke.framework */,
 				339959AC1FCEE74F00D69A01 /* EarlGrey.framework */,
@@ -2184,6 +2192,7 @@
 		339959A91FCED3B900D69A01 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				ABB0A50720AE4814006D4FBC /* Analytics.swift */,
 				339959AA1FCED3D700D69A01 /* DLog.swift */,
 				33CF51341FD184AB00293FD1 /* UserDefaultsWrapper.swift */,
 				33643DC01FD6D2F300229BE2 /* PasswordValidator.swift */,
@@ -3918,6 +3927,7 @@
 				A91629141F3C6614008A7F36 /* PaymentAddressViewController.swift in Sources */,
 				2B19D76020357615007610E7 /* SendTokenViewModel.swift in Sources */,
 				A9E691D11F7A49B100317DB1 /* SignInLayout.swift in Sources */,
+				ABB0A50A20AE4821006D4FBC /* Analytics.swift in Sources */,
 				2B5FDC2F204D8E340000DD76 /* DappsDataSource.swift in Sources */,
 				9F78D9CE1EE93E68003A0B95 /* ModalPresentable.swift in Sources */,
 				9F88EA051EE0411A00267573 /* SettingsController.swift in Sources */,
@@ -4229,6 +4239,7 @@
 				2BF634521F7D568C00235C67 /* UIImage+Utils.m in Sources */,
 				2B19D75E20357615007610E7 /* SendTokenViewModel.swift in Sources */,
 				A91D72A01F877FFA0093420C /* ChatsNavigationController.swift in Sources */,
+				ABB0A50820AE4814006D4FBC /* Analytics.swift in Sources */,
 				2B5FDC2D204D8E340000DD76 /* DappsDataSource.swift in Sources */,
 				9FA12BF21E65D135003705F6 /* SoundPlayer.swift in Sources */,
 				2B3DF3611F4721EB00A869A3 /* SettingsProfileCell.swift in Sources */,
@@ -4524,6 +4535,7 @@
 				A9603E571F4DABDC00BF57B1 /* ModalPresentable.swift in Sources */,
 				2B19D75F20357615007610E7 /* SendTokenViewModel.swift in Sources */,
 				A9603E5B1F4DABDC00BF57B1 /* SettingsController.swift in Sources */,
+				ABB0A50920AE4821006D4FBC /* Analytics.swift in Sources */,
 				2B5FDC2E204D8E340000DD76 /* DappsDataSource.swift in Sources */,
 				A9603E5C1F4DABDC00BF57B1 /* PassphraseVerifyController.swift in Sources */,
 				A9603E5D1F4DABDC00BF57B1 /* MessagesTextCell.swift in Sources */,
