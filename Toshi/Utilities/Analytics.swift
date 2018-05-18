@@ -28,8 +28,8 @@ struct Analytics {
 	
 	/** Track event
 	- parameters:
-	- event: The event described by the TrackingString
-	- properties: A dictionary of custom attributes to associate with this event. Properties will allow you to segment your events in your reports.
+     - event: The event described by the TrackingString
+     - properties: A dictionary of custom attributes to associate with this event. Properties will allow you to segment your events in your reports.
 	*/
 	public static func trackEvent(_ event: TrackingString, properties: [String: Any]? = nil) {
 		Amplitude.instance().logEvent(event.rawValue, withEventProperties: properties)

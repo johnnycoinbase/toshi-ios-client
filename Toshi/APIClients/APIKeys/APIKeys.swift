@@ -16,11 +16,11 @@
 import Foundation
 
 struct APIKeys {
-
+    
     static let Fabric = "Fabric_API_Key"
-	static let AmplitudeProductionAPIKey = "AmplitudeProductionAPIKey"
-	static let AmplitudeDevelopmentAPIKey = "AmplitudeDevelopmentAPIKey"
-
+    static let AmplitudeProduction = "AmplitudeProduction"
+    static let AmplitudeDevelopment = "AmplitudeDevelopment"
+    
     static func key(named keyname: String) -> String? {
         guard let filePath = Bundle.main.path(forResource: "APIKeys", ofType: "plist", inDirectory: "APIKeys"),
             let plist = NSDictionary(contentsOfFile: filePath),
@@ -28,27 +28,31 @@ struct APIKeys {
                 DLog("Can't load API Keys plist file")
                 return nil
         }
-
+        
         return value
     }
 }
 
 final class APIKeysManager {
-
-     static func setup() {
+    
+    /**
+     The keys are stored in a separate plist file that isn't included in this project so
+     we need to check for the existence of the file before we can initialize these services.
+     */
+    static func setup() {
         if let fabricKey = APIKeys.key(named: APIKeys.Fabric) {
-			CrashlyticsClient.start(with: fabricKey)
-		} else {
-			DLog("Can't load Fabric API Key")
-		}
-
-		let amplitudeKey = Bundle.main.bundleIdentifier == "org.toshi.distribution" ?
-		APIKeys.AmplitudeProductionAPIKey : APIKeys.AmplitudeDevelopmentAPIKey
-		if let amplitudeValue = APIKeys.key(named: amplitudeKey) {
-			Amplitude.instance().initializeApiKey(amplitudeValue)
-		} else {
-			DLog("Can't load Amplitude API Key")
-		}
-		
+            CrashlyticsClient.start(with: fabricKey)
+        } else {
+            DLog("Can't load Fabric API Key")
+        }
+        
+        let amplitudeEnvironment = Bundle.main.bundleIdentifier == "org.toshi.distribution" ?
+            APIKeys.AmplitudeProduction : APIKeys.AmplitudeDevelopment
+        if let amplitudeAPIKey = APIKeys.key(named: amplitudeEnvironment) {
+            Amplitude.instance().initializeApiKey(amplitudeAPIKey)
+        } else {
+            DLog("Can't load Amplitude API Key")
+        }
+        
     }
 }
