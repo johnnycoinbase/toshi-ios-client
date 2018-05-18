@@ -18,7 +18,8 @@ import Foundation
 struct APIKeys {
 
     static let Fabric = "Fabric_API_Key"
-	static let Amplitude = "Amplitude_API_Key"
+	static let AmplitudeProductionAPIKey = "AmplitudeProductionAPIKey"
+	static let AmplitudeDevelopmentAPIKey = "AmplitudeDevelopmentAPIKey"
 
     static func key(named keyname: String) -> String? {
         guard let filePath = Bundle.main.path(forResource: "APIKeys", ofType: "plist", inDirectory: "APIKeys"),
@@ -41,8 +42,10 @@ final class APIKeysManager {
 			DLog("Can't load Fabric API Key")
 		}
 
-		if let amplitudeKey = APIKeys.key(named: APIKeys.Amplitude) {
-			Amplitude.instance().initializeApiKey(amplitudeKey)
+		let amplitudeKey = Bundle.main.bundleIdentifier == "org.toshi.distribution" ?
+		APIKeys.AmplitudeProductionAPIKey : APIKeys.AmplitudeDevelopmentAPIKey
+		if let amplitudeValue = APIKeys.key(named: amplitudeKey) {
+			Amplitude.instance().initializeApiKey(amplitudeValue)
 		} else {
 			DLog("Can't load Amplitude API Key")
 		}
