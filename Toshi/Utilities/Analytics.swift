@@ -15,6 +15,23 @@
 
 import Foundation
 
+/**
+
+Central place for all event tracking and event logging.
+Currently using Amplitude for analytics but may be integrating other tracking services in the future.
+
+*/
 struct Analytics {
+	public enum TrackingString: String {
+		case signInTapped = "sign_in_tapped"
+	}
 	
+	/** Track event
+	- parameters:
+	- event: The event described by the TrackingString
+	- properties: A dictionary of custom attributes to associate with this event. Properties will allow you to segment your events in your reports.
+	*/
+	public static func trackEvent(_ event: TrackingString, properties: [String: Any]? = nil) {
+		Amplitude.instance().logEvent(event.rawValue, withEventProperties: properties)
+	}
 }

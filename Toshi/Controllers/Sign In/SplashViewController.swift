@@ -147,6 +147,8 @@ final class SplashViewController: UIViewController {
     }
 
     @objc private func signinPressed(_: UIButton) {
+		Analytics.trackEvent(Analytics.TrackingString.signInTapped)
+		
         let controller = SignInViewController()
         controller.delegate = self
         Navigator.push(controller, from: self)
