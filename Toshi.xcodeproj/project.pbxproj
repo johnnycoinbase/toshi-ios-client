@@ -320,7 +320,6 @@
 		2BDAA5971FEAAE6200D06645 /* TSThread+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDAA5961FEAAE6100D06645 /* TSThread+Addition.swift */; };
 		2BDAA5981FEAAE6200D06645 /* TSThread+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDAA5961FEAAE6100D06645 /* TSThread+Addition.swift */; };
 		2BDAA5991FEAAE6200D06645 /* TSThread+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDAA5961FEAAE6100D06645 /* TSThread+Addition.swift */; };
-		2BDBB5791F7B832700A0ECA0 /* APIKeys in Resources */ = {isa = PBXBuildFile; fileRef = 2BDBB5781F7B832300A0ECA0 /* APIKeys */; };
 		2BDBB57A1F7B832A00A0ECA0 /* APIKeys in Resources */ = {isa = PBXBuildFile; fileRef = 2BDBB5781F7B832300A0ECA0 /* APIKeys */; };
 		2BDBB57B1F7B832A00A0ECA0 /* APIKeys in Resources */ = {isa = PBXBuildFile; fileRef = 2BDBB5781F7B832300A0ECA0 /* APIKeys */; };
 		2BE0D4002033AAC7008CD55A /* SF-Pro-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2BE0D3FF2033AAC6008CD55A /* SF-Pro-Text-Heavy.otf */; };
@@ -1017,6 +1016,10 @@
 		ABB0A50820AE4814006D4FBC /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB0A50720AE4814006D4FBC /* Analytics.swift */; };
 		ABB0A50920AE4821006D4FBC /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB0A50720AE4814006D4FBC /* Analytics.swift */; };
 		ABB0A50A20AE4821006D4FBC /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB0A50720AE4814006D4FBC /* Analytics.swift */; };
+		ABB0A50B20AE49E0006D4FBC /* Amplitude.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB0A50520AE47FC006D4FBC /* Amplitude.framework */; };
+		ABB0A50C20AE49E6006D4FBC /* Amplitude.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB0A50520AE47FC006D4FBC /* Amplitude.framework */; };
+		ABB0A50F20AE4A82006D4FBC /* Amplitude.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ABB0A50520AE47FC006D4FBC /* Amplitude.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ABB0A51D20AE5168006D4FBC /* APIKeys in Resources */ = {isa = PBXBuildFile; fileRef = 2BDBB5781F7B832300A0ECA0 /* APIKeys */; };
 		C1128E2CDD482DB9BE1BF5A3 /* libPods-CocoaPods-Distribution.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E67E3F2BFB7B0171BF61B30 /* libPods-CocoaPods-Distribution.a */; };
 		C904ABD5324415F45702AB48 /* libPods-CocoaPods-Distribution.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2446336EA68730ACD1CE100D /* libPods-CocoaPods-Distribution.a */; };
 		D197B006BD046DC2E6B46351 /* String+nsRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B695935159A20363BBF9 /* String+nsRange.swift */; };
@@ -1202,6 +1205,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				ABB0A50F20AE4A82006D4FBC /* Amplitude.framework in Embed Frameworks */,
 				339E999C20A5E6A600FE69E2 /* BlockiesSwift.framework in Embed Frameworks */,
 				9FA12BE91E65A151003705F6 /* RevealServer.framework in Embed Frameworks */,
 				9F3FF8331EB36A8E002D0293 /* CameraScanner.framework in Embed Frameworks */,
@@ -1747,6 +1751,7 @@
 				9FF957781EEEB7BA00DDCBD8 /* libz.tbd in Frameworks */,
 				9FF957791EEEB7BA00DDCBD8 /* libc++.tbd in Frameworks */,
 				9FF9577A1EEEB7BA00DDCBD8 /* libstdc++.tbd in Frameworks */,
+				ABB0A50C20AE49E6006D4FBC /* Amplitude.framework in Frameworks */,
 				9FF9577B1EEEB7BA00DDCBD8 /* AssetsLibrary.framework in Frameworks */,
 				9FF9577C1EEEB7BA00DDCBD8 /* MobileCoreServices.framework in Frameworks */,
 				9F9CDCF31FBB24E200D042BA /* Teapot.framework in Frameworks */,
@@ -1828,6 +1833,7 @@
 				A9603F391F4DABDC00BF57B1 /* libz.tbd in Frameworks */,
 				A9603F3A1F4DABDC00BF57B1 /* libc++.tbd in Frameworks */,
 				A9603F3B1F4DABDC00BF57B1 /* libstdc++.tbd in Frameworks */,
+				ABB0A50B20AE49E0006D4FBC /* Amplitude.framework in Frameworks */,
 				A9603F3C1F4DABDC00BF57B1 /* AssetsLibrary.framework in Frameworks */,
 				A9603F3D1F4DABDC00BF57B1 /* MobileCoreServices.framework in Frameworks */,
 				9F9CDCF21FBB24E200D042BA /* SweetUIKit.framework in Frameworks */,
@@ -3104,9 +3110,9 @@
 				9F9238AE1E24F1D2004BEEE0 /* Frameworks */,
 				9F9238AF1E24F1D2004BEEE0 /* Resources */,
 				1462543C1E4326DA00A3B822 /* Embed Frameworks */,
-				A94C4EAB1F261C8E00E424EB /* SwiftLint Run Script */,
-				2BC408531EF2CED30044C242 /* Fabric Run Script */,
 				0B4023E44BAD654CF957546B /* [CP] Copy Pods Resources */,
+				2BC408531EF2CED30044C242 /* Fabric Run Script */,
+				A94C4EAB1F261C8E00E424EB /* SwiftLint Run Script */,
 			);
 			buildRules = (
 			);
@@ -3312,7 +3318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A93432CB1F94E48500A52F11 /* SF-Pro-Display-Semibold.otf in Resources */,
-				2BDBB5791F7B832700A0ECA0 /* APIKeys in Resources */,
+				ABB0A51D20AE5168006D4FBC /* APIKeys in Resources */,
 				2BE0D4042033ABE3008CD55A /* SF-Pro-Text-Bold.otf in Resources */,
 				338472EF202A5DD4000F5A8A /* SFMono-Regular.otf in Resources */,
 				338472F2202A5DD4000F5A8A /* SFMono-Bold.otf in Resources */,
@@ -3497,6 +3503,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Reachability.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Haneke.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/BlockiesSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Amplitude.framework",
 			);
 			name = "Copy Carthage Frameworks";
 			outputPaths = (
@@ -3641,6 +3648,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Reachability.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Haneke.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/BlockiesSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Amplitude.framework",
 			);
 			name = "Copy Carthage Frameworks";
 			outputPaths = (

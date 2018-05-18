@@ -97,6 +97,7 @@
 
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import <Amplitude/Amplitude.h>
 
 #import <Mantle/MTLModel.h>
 

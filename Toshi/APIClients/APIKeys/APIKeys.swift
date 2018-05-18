@@ -18,9 +18,9 @@ import Foundation
 struct APIKeys {
 
     static let Fabric = "Fabric_API_Key"
+	static let Amplitude = "Amplitude_API_Key"
 
     static func key(named keyname: String) -> String? {
-
         guard let filePath = Bundle.main.path(forResource: "APIKeys", ofType: "plist", inDirectory: "APIKeys"),
             let plist = NSDictionary(contentsOfFile: filePath),
             let value = plist.object(forKey: keyname) as? String else {
@@ -35,11 +35,17 @@ struct APIKeys {
 final class APIKeysManager {
 
      static func setup() {
-        guard let fabricKey = APIKeys.key(named: APIKeys.Fabric) else {
-            DLog("Can't load Fabric API Key")
-            return
-        }
+        if let fabricKey = APIKeys.key(named: APIKeys.Fabric) {
+			CrashlyticsClient.start(with: fabricKey)
+		} else {
+			DLog("Can't load Fabric API Key")
+		}
 
-        CrashlyticsClient.start(with: fabricKey)
+		if let amplitudeKey = APIKeys.key(named: APIKeys.Amplitude) {
+			Amplitude.instance().initializeApiKey(amplitudeKey)
+		} else {
+			DLog("Can't load Amplitude API Key")
+		}
+		
     }
 }
