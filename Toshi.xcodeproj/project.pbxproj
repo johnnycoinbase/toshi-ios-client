@@ -1012,6 +1012,7 @@
 		A9EE1F381F98CBCF00FB3889 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A93432C61F94E48500A52F11 /* SF-Pro-Display-Semibold.otf */; };
 		A9F61F7F1E72E22900D892E5 /* SettingsSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F61F7E1E72E22900D892E5 /* SettingsSectionHeader.swift */; };
 		A9F8D1C81E72B4AA003F5749 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F8D1C71E72B4AA003F5749 /* Checkbox.swift */; };
+		AB531A3220AFFBBC004490BA /* CryptoToolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB531A3120AFFBBC004490BA /* CryptoToolsTests.swift */; };
 		ABB0A50620AE47FD006D4FBC /* Amplitude.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB0A50520AE47FC006D4FBC /* Amplitude.framework */; };
 		ABB0A50820AE4814006D4FBC /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB0A50720AE4814006D4FBC /* Analytics.swift */; };
 		ABB0A50920AE4821006D4FBC /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB0A50720AE4814006D4FBC /* Analytics.swift */; };
@@ -1636,6 +1637,7 @@
 		A9ED6CD51E85291600160637 /* KeyboardInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardInfo.swift; sourceTree = "<group>"; };
 		A9F61F7E1E72E22900D892E5 /* SettingsSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSectionHeader.swift; sourceTree = "<group>"; };
 		A9F8D1C71E72B4AA003F5749 /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
+		AB531A3120AFFBBC004490BA /* CryptoToolsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoToolsTests.swift; sourceTree = "<group>"; };
 		ABB0A50520AE47FC006D4FBC /* Amplitude.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Amplitude.framework; path = Carthage/Build/iOS/Amplitude.framework; sourceTree = "<group>"; };
 		ABB0A50720AE4814006D4FBC /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		B40A4C4CC6900CEF3306492F /* Pods-CocoaPods-Development.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaPods-Development.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaPods-Development/Pods-CocoaPods-Development.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1917,6 +1919,7 @@
 				D197BBE7ED942198265AED9B /* String+nsRangeTests.swift */,
 				9F3CF6A21FE143B600043530 /* TextTransformerTests.swift */,
 				D197B5CF9A6EFA209E1D74B5 /* IDAPIClientTests.swift */,
+				AB531A3120AFFBBC004490BA /* CryptoToolsTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -3807,6 +3810,7 @@
 				D197B50DCD78CB8264B920C3 /* NSDecimalNumber+AdditionsTests.swift in Sources */,
 				33806077206274A200916E6A /* GeneratedCodeTests.swift in Sources */,
 				D197B9197610B41F1C03A246 /* PaymentManagerTests.swift in Sources */,
+				AB531A3220AFFBBC004490BA /* CryptoToolsTests.swift in Sources */,
 				D197BCD0784E03D9B662C7F8 /* CGFloat+Additions.swift in Sources */,
 				D197BCE9E48328BF70480029 /* DirectoryAPIClientTests.swift in Sources */,
 				D197B64168F50DA7F7EAC669 /* IDAPIClientTests.swift in Sources */,
