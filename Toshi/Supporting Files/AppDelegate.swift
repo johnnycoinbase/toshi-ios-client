@@ -224,8 +224,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         CrashlyticsClient.setupForUser(with: Cereal.shared.address)
         
-        let userIDHash = CryptoTools.hash(withSha256: Cereal.shared.address)
-        Amplitude.instance().setUserId(userIDHash)
+        let hashedUserID = CryptoTools.hash(withSha256: Cereal.shared.address)
+        Amplitude.instance().setUserId(hashedUserID)
 
         TSSocketManager.requestSocketOpen()
         RTCInitializeSSL()
