@@ -42,6 +42,9 @@
 /// Returns the token included as part of HTTP OTP authentication.
 + (NSString *)computeOtpWithPassword:(NSString *)password andCounter:(int64_t)counter;
 
+/// Compute SHA256 hash of the given string.
++ (NSString *)hashWithSha256:(NSString *)input;
+
 @end
 
 @interface NSData (CryptoTools)

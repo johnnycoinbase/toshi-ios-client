@@ -223,6 +223,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SessionCipher.setSessionCipherDispatchQueue(OWSDispatch.sessionStoreQueue())
 
         CrashlyticsClient.setupForUser(with: Cereal.shared.address)
+        
+        let userIDHash = CryptoTools.hash(withSha256: Cereal.shared.address)
+        Amplitude.instance().setUserId(userIDHash)
 
         TSSocketManager.requestSocketOpen()
         RTCInitializeSSL()
